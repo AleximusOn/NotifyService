@@ -3,6 +3,8 @@ using Autofac.Extensions.DependencyInjection;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NotifyService.Common.Library.Configurations;
 using NotifyService.Core.Domain.Extensions;
+using NotifyService.Data.Database;
+using NotifyService.Data.Database.Entities;
 
 namespace NotifyService.WebApi
 {
@@ -36,8 +40,19 @@ namespace NotifyService.WebApi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.Configure<AppConfiguration>(GetAppConfigSection());
-			services.AddBearerAuthentication(ConfigurationReader.Current.AuthOptions);
+
+			services.AddDbContext<BaseDbContext>(options =>
+				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+			services.AddIdentityCore<Account>()
+				.AddRoles<AccountRole>()
+				.AddEntityFrameworkStores<BaseDbContext>()
+				.AddSignInManager()
+				.AddDefaultTokenProviders();
+			
 			services.AddControllers();
+			
+			services.AddBearerAuthentication(ConfigurationReader.Current.AuthOptions);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

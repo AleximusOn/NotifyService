@@ -12,7 +12,7 @@ using NotifyService.Common.Library.Exceptions;
 using NotifyService.Core.Domain.Commands;
 using NotifyService.Core.Domain.Extensions;
 using NotifyService.Core.Domain.Models;
-using NotifyService.Data.Models.Entities;
+using NotifyService.Data.Database.Entities;
 
 namespace NotifyService.Core.Domain.CommandHandler
 {
@@ -52,28 +52,8 @@ namespace NotifyService.Core.Domain.CommandHandler
 			return Task.FromResult(response);
 		}
 
-		private readonly Account[] _accounts =
-		{
-			new Account {Login = "Admin", Role = "Admin"}
-		};
 		private ClaimsIdentity GetIdentity(string username, string password)
 		{
-			var account =
-				_accounts.FirstOrDefault(a => a.Login.Equals(username, StringComparison.CurrentCultureIgnoreCase));
-			if (account != null)
-			{
-				var claims = new List<Claim>
-				{
-					new Claim(ClaimsIdentity.DefaultNameClaimType, account.Login),
-					new Claim(ClaimsIdentity.DefaultRoleClaimType, account.Role)
-				};
-				ClaimsIdentity claimsIdentity =
-					new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
-						ClaimsIdentity.DefaultRoleClaimType);
-				return claimsIdentity;
-			}
-			
-			// если пользователя не найдено
 			return null;
 		}
 	}

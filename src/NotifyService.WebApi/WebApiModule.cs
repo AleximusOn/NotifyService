@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using NotifyService.Common.Library;
 using NotifyService.Core.Domain;
-using NotifyService.Data.Models;
+using NotifyService.Data.Database;
 
 namespace NotifyService.WebApi
 {

@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace NotifyService.Data.Models
+namespace NotifyService.Data.Database
 {
 	public class DataModelsModule : Module
 	{

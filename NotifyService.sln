@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyService.WebApi", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D9FBE53D-E87A-43F1-BA50-38E122C555B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyService.Data.Models", "src\Data\NotifyService.Data.Models\NotifyService.Data.Models.csproj", "{E1F08D10-A0BE-4913-9462-F1DD42DDAFCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyService.Data.Database", "src\Data\NotifyService.Data.Database\NotifyService.Data.Database.csproj", "{E1F08D10-A0BE-4913-9462-F1DD42DDAFCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0423B17D-F0DD-4482-9F6C-D4EFFC2558E0}"
 EndProject

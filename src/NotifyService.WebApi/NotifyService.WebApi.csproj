@@ -7,7 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\NotifyService.Common.Library\NotifyService.Common.Library.csproj" />
     <ProjectReference Include="..\Core\NotifyService.Core.Domain\NotifyService.Core.Domain.csproj" />
-    <ProjectReference Include="..\Data\NotifyService.Data.Models\NotifyService.Data.Models.csproj" />
+    <ProjectReference Include="..\Data\NotifyService.Data.Database\NotifyService.Data.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>

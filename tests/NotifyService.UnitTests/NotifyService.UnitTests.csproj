@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Data\NotifyService.Data.Models\NotifyService.Data.Models.csproj" />
+    <ProjectReference Include="..\..\src\Data\NotifyService.Data.Database\NotifyService.Data.Database.csproj" />
     <ProjectReference Include="..\..\src\NotifyService.WebApi\NotifyService.WebApi.csproj" />
   </ItemGroup>
 
