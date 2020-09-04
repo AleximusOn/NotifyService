@@ -17,8 +17,15 @@ namespace NotifyService.WebApi.Controllers
 		{
 			_mediator = mediator;
 		}
-		[HttpPost(ApiRoutes.Accounts_Token)]
-		public async Task<TokenDto> Token(GetAccessTokenCommand command)
+
+		[HttpPost(ApiRoutes.Accounts_Login)]
+		public async Task<TokenDto> Login([FromBody] GetAccessTokenCommand command)
+		{
+			return await _mediator.Send(command);
+		}
+
+		[HttpPost(ApiRoutes.Accounts_Register)]
+		public async Task<TokenDto> Register([FromBody] RegisterAccountCommand command)
 		{
 			return await _mediator.Send(command);
 		}

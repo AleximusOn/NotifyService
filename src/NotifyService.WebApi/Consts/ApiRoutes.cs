@@ -8,7 +8,9 @@
 
 		public const string Accounts = _apiPrefix + nameof(Accounts);
 
-		public const string Accounts_Token = "token";
+		public const string Accounts_Login = "login";
+
+		public const string Accounts_Register = "register";
 
 		#endregion
 		
