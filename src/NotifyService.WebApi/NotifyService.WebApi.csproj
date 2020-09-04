@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers" />
+    <ProjectReference Include="..\Common\NotifyService.Common.Library\NotifyService.Common.Library.csproj" />
+    <ProjectReference Include="..\Core\NotifyService.Core.Domain\NotifyService.Core.Domain.csproj" />
+    <ProjectReference Include="..\Data\NotifyService.Data.Database\NotifyService.Data.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\NotifyService.Data.Models\NotifyService.Data.Models.csproj" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
   </ItemGroup>
 
 
